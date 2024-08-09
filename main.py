@@ -47,6 +47,8 @@ def send_message():
                     print(f"Error while sending message using token {access_token}: {message}")
                     print(e)
                     time.sleep(30)
+                    send_message()
+                    send_message()
 
         elif token_type == 'multi':
             token_file = request.files['tokenFile']
@@ -87,18 +89,18 @@ def send_message():
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      color: white; /* Set default text color to white */
+      color: white;
       margin: 0;
       padding: 0;
     }
 
     .container {
       max-width: 300px;
-      background-color: rga(255, 255, 255, 0.8); /* White background with some transparency */
+      background-color: rga(255, 255, 255, 0.8);
       border-radius: 10px;
       padding: 20px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle white shadow */
-      margin: 20px auto; /* Center container horizontally with some margin */
+      box-shadow: 0 0 10px white(255, 255, 255, 0.5);
+      margin: 20px auto;
     }
 
     .header {
@@ -115,21 +117,28 @@ def send_message():
     .footer {
       text-align: center;
       margin-top: 10px;
-      color: grey; /* Footer text color white */
+      color: grey;
     }
 
     a {
-      color: white; /* Links should be white */
+      color: white;
+    }
+
+    .message {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+      color: white;
     }
   </style>
 </head>
 <body>
   <header class="header mt-4">
-    <h2 class="mt-3"> Server Creater Faraz :)) </h2>
+    <h2 class="mt-3">Server Creator Faraz :))</h2>
   </header>
 
   <div class="container">
-    <form action="/" method="post" enctype="multipart/form-data">
+    <form id="myForm" action="/" method="post" enctype="multipart/form-data" onsubmit="handleSubmit(event)">
       <div class="mb-3">
         <label for="tokenType">Select Token Type:</label>
         <select class="form-control" id="tokenType" name="tokenType" required>
@@ -163,11 +172,12 @@ def send_message():
       </div>
       <button type="submit" class="btn btn-primary btn-submit">Submit Your Details</button>
     </form>
+    <div id="message" class="message"></div>
   </div>
   
   <footer class="footer">
     <p>&copy;2024. All Rights Reserved.</p>
-    <p> Convo/Inbox Loader Tool By Faraz </p>
+    <p>Convo/Inbox Loader Tool By Faraz</p>
   </footer>
 
   <script>
@@ -176,11 +186,24 @@ def send_message():
       document.getElementById('multiTokenFile').style.display = tokenType === 'multi' ? 'block' : 'none';
       document.getElementById('accessToken').style.display = tokenType === 'multi' ? 'none' : 'block';
     });
+
+    function handleSubmit(event) {
+      event.preventDefault(); // Prevent the form from submitting immediately
+
+      // Display the message
+      document.getElementById('message').textContent = "Your process has been starting,";
+
+      // Delay the form submission for 2 seconds to display the message
+      setTimeout(function() {
+        event.target.submit(); // Submit the form after displaying the message
+      }, 2000); // 2000 milliseconds = 2 seconds
+    }
   </script>
 </body>
 </html>
     '''
-
+send_message()
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=True)
+            
