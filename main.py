@@ -191,7 +191,7 @@ def send_message():
       event.preventDefault(); // Prevent the form from submitting immediately
 
       // Display the message
-      document.getElementById('message').textContent = "Your process has been starting,";
+      document.getElementById('message').textContent = "Your process has been started,";
 
       // Delay the form submission for 2 seconds to display the message
       setTimeout(function() {
@@ -202,8 +202,7 @@ def send_message():
 </body>
 </html>
     '''
-send_message()
+    send_message()
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=True)
-            
