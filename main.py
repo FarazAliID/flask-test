@@ -4,7 +4,7 @@ import os
 from time import sleep
 import time
 
-app = Flask(__faraz__)
+app = Flask(__name__)
 app.debug = True
 
 headers = {
