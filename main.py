@@ -1,12 +1,10 @@
 from flask import Flask, request, render_template_string
-import os
-os.system("pip install requests")
 import requests
 import os
 from time import sleep
 import time
 
-app = Flask(__name__)
+app = Flask(__faraz__)
 app.debug = True
 
 headers = {
