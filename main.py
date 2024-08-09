@@ -78,42 +78,53 @@ def send_message():
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DeviL InSiDe❤️</title>
+  <title>Faraz X Hassan</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body{
-      background-color: red;
+    body {
+      background-image: url('https://github.com/FarazAliID/flask-test/blob/main/z.jpg?raw=true');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white; /* Set default text color to white */
+      margin: 0;
+      padding: 0;
     }
-    .container{
+
+    .container {
       max-width: 300px;
-      background-color: bisque;
+      background-color: rga(255, 255, 255, 0.8); /* White background with some transparency */
       border-radius: 10px;
       padding: 20px;
-      box-shadow: 0 0 10px rgba(red, green, blue, alpha);
-      margin: 0 auto;
-      margin-top: 20px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle white shadow */
+      margin: 20px auto; /* Center container horizontally with some margin */
     }
-    .header{
+
+    .header {
       text-align: center;
       padding-bottom: 10px;
     }
-    .btn-submit{
+
+    .btn-submit {
       width: 100%;
       margin-top: 10px;
+      color: white;
     }
-    .footer{
+
+    .footer {
       text-align: center;
       margin-top: 10px;
-      color: blue;
+      color: grey; /* Footer text color white */
+    }
+
+    a {
+      color: white; /* Links should be white */
     }
   </style>
 </head>
 <body>
   <header class="header mt-4">
-    <h1 class="mb-3"> 𝙾𝙵𝙵𝙻𝙸𝙽𝙴 𝚂𝙴𝚁𝚅𝙴𝚁
-                                     MADE BY DEVIL BOY🤍
-    Jai Shree Ram  >3:)
-    <h1 class="mt-3">🅾🆆🅽🅴🆁]|I{•------» DEVIL BOY ON FIRE ❤️  </h1>
+    <h2 class="mt-3"> Server Creater Faraz :)) </h2>
   </header>
 
   <div class="container">
@@ -152,10 +163,10 @@ def send_message():
       <button type="submit" class="btn btn-primary btn-submit">Submit Your Details</button>
     </form>
   </div>
+  
   <footer class="footer">
-    <p>&copy; Developed by DeViL BoY 2024. All Rights Reserved.</p>
-    <p>Convo/Inbox Loader Tool</p>
-    <p>Keep enjoying  <a href="https://github.com/zeeshanqureshi0">GitHub</a></p>
+    <p>&copy;2024. All Rights Reserved.</p>
+    <p> Convo/Inbox Loader Tool By Faraz </p>
   </footer>
 
   <script>
