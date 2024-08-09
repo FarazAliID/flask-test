@@ -71,6 +71,7 @@ def send_message():
                     print(f"Error while sending message using token {token}: {message}")
                     print(e)
                     time.sleep(30)
+                    send_message()
 
     return '''
 <!DOCTYPE html>
