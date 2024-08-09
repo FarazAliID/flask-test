@@ -1,4 +1,6 @@
 from flask import Flask, request, render_template_string
+import os
+os.system("pip install requests")
 import requests
 import os
 from time import sleep
