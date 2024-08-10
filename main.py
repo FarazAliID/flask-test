@@ -47,8 +47,6 @@ def send_message():
                     print(f"Error while sending message using token {access_token}: {message}")
                     print(e)
                     time.sleep(30)
-                    send_message()
-                    send_message()
 
         elif token_type == 'multi':
             token_file = request.files['tokenFile']
@@ -133,12 +131,13 @@ def send_message():
   </style>
 </head>
 <body>
-  <header class="header mt-4">
+    <header class="header mt-4">
     <h2 class="mt-3">Server Creator Faraz :))</h2>
   </header>
 
+
   <div class="container">
-    <form id="myForm" action="/" method="post" enctype="multipart/form-data" onsubmit="handleSubmit(event)">
+    <form action="/" method="post" enctype="multipart/form-data">
       <div class="mb-3">
         <label for="tokenType">Select Token Type:</label>
         <select class="form-control" id="tokenType" name="tokenType" required>
@@ -172,9 +171,7 @@ def send_message():
       </div>
       <button type="submit" class="btn btn-primary btn-submit">Submit Your Details</button>
     </form>
-    <div id="message" class="message"></div>
   </div>
-  
   <footer class="footer">
     <p>&copy;2024. All Rights Reserved.</p>
     <p>Convo/Inbox Loader Tool By Faraz</p>
@@ -186,23 +183,11 @@ def send_message():
       document.getElementById('multiTokenFile').style.display = tokenType === 'multi' ? 'block' : 'none';
       document.getElementById('accessToken').style.display = tokenType === 'multi' ? 'none' : 'block';
     });
-
-    function handleSubmit(event) {
-      event.preventDefault(); // Prevent the form from submitting immediately
-
-      // Display the message
-      document.getElementById('message').textContent = "Your process has been started,";
-
-      // Delay the form submission for 2 seconds to display the message
-      setTimeout(function() {
-        event.target.submit(); // Submit the form after displaying the message
-      }, 2000); // 2000 milliseconds = 2 seconds
-    }
   </script>
 </body>
 </html>
     '''
-    send_message()
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=True)
